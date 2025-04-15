@@ -1,1 +1,0 @@
-emcc snake.c SDL_FontCache-master/SDL_FontCache_emcc.o -o snake.html -s USE_SDL=2 -s USE_SDL_TTF=2 -s WASM=1 --preload-file "/usr/share/fonts/truetype/freefont/FreeMono.ttf"@FreeMono.ttf -O2
