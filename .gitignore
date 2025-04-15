@@ -1,0 +1,7 @@
+/dockerfile
+*.geany
+/nginx.conf
+website/
+.cache/
+snapshots/
+/snake
