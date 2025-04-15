@@ -1,7 +1,7 @@
 # Mr. Cool Snake
 A simple snake/nibbles clone loosely based off my memories playing [Nibbles 68k by John David Ratcliffe for the TI-89 graphing calulator](https://technoplaza.net/downloads/details.php?program=1).
 
-##Controls
+## Controls
 - Arrows or WASD for movement
 - Spacebar for starting/pausing
 - Brackets for changing difficulty
