@@ -379,6 +379,8 @@ CellType* get_graphics_matrix(Game* game){
 	}
 	
 	return(graphicsMatrix);
+	free(levelDat);
+	free(graphicsMatrix);
 }
 
 
@@ -402,7 +404,7 @@ Position find_fruit_pos(Game* game){
 	Position* validPosArray = calloc(AREA_HEIGHT*AREA_WIDTH, sizeof(Position));
 	CellType* graphicsMatrix = get_graphics_matrix(game);
 	
-	int validPosNum=-1;
+	int validPosNum=0;
 	for(int i=0; i<AREA_WIDTH*AREA_HEIGHT; i++){
 		if(graphicsMatrix[i] == EMPTY){
 			validPosArray[validPosNum].x = i % AREA_WIDTH;
@@ -412,7 +414,10 @@ Position find_fruit_pos(Game* game){
 	}
 	
 	Position fruitPos = validPosArray[rand() % validPosNum];
-	
+		
+	free(validPosArray);
+	free(graphicsMatrix);
+
 	return(fruitPos);
 }
 
@@ -424,6 +429,7 @@ Position* reset_tail(Game* game){
 		tailArray[i].y = game->snake.pos.y;
 	}
 	return(tailArray);
+	free(tailArray);
 }
 
 Position find_starting_pos(Game* game) {
@@ -630,6 +636,6 @@ char* get_level(int levelNum){
 			free(levelDat);
 			return(NULL);
 	}
-	
 	return(levelDat);
+	free(levelDat);
 }
