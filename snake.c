@@ -188,20 +188,25 @@ void main_loop(void* arg) {
 						actionOnFrame = true;
 						break;
 						
-					case SDLK_RIGHTBRACKET:
-						if(context->game.difficulty < 5){
-							context->game.difficulty++;
-						}
+					case SDLK_1:
+						context->game.difficulty = 1;
 						break;
-					case SDLK_LEFTBRACKET:
-						if(context->game.difficulty > 1){
-							context->game.difficulty--;
-						}
+					case SDLK_2:
+						context->game.difficulty = 2;
+						break;
+					case SDLK_3:
+						context->game.difficulty = 3;
+						break;
+					case SDLK_4:
+						context->game.difficulty = 4;
+						break;
+					case SDLK_5:
+						context->game.difficulty = 5;
 						break;
 					case SDLK_SPACE:
 						context->game.snake.moving = !context->game.snake.moving;
 						break;
-					#ifdef _GNUC__
+					#ifdef __GNCC__
 					case SDLK_ESCAPE:
 						quit = true;
 						break;
